@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XampleUI.Views.DribCakes.DribCakes"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid>
+            <Image Aspect="AspectFill" Source="cake_bg.png" />
+            <BoxView
+                Margin="0,0,-20,-20"
+                BackgroundColor="#b81f1c"
+                CornerRadius="20"
+                HeightRequest="80"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="80">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Label
+                FontSize="20"
+                Text="&gt;"
+                TextColor="White" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

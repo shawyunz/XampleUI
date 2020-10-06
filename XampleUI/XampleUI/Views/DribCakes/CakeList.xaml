@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XampleUI.Views.DribCakes.CakeList"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout Padding="32" BackgroundColor="#dededd">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="BoxView">
+                        <Setter Property="WidthRequest" Value="40" />
+                        <Setter Property="HeightRequest" Value="40" />
+                        <Setter Property="BackgroundColor" Value="White" />
+                        <Setter Property="CornerRadius" Value="20" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+
+            <!--<StackLayout
+                Margin="0,16"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+                <Image Source="icon_menu.png" />
+                <Image HorizontalOptions="EndAndExpand" Source="icon_cart.png" />
+            </StackLayout>
+
+            <StackLayout Margin="0,16" Spacing="0">
+                <Label FontSize="26" Text="Fresh Taste of" />
+                <Label FontSize="26" Text="Designed Cakes" />
+            </StackLayout>
+
+            <Grid Margin="0,16" ColumnSpacing="20">
+                <BoxView Grid.Column="0" />
+                <BoxView Grid.Column="1" />
+                <BoxView Grid.Column="2" />
+                <BoxView Grid.Column="3" BackgroundColor="#3d9165" />
+                <Image Grid.Column="0" Source="icon_menu.png" />
+                <Image Grid.Column="1" Source="icon_menu.png" />
+                <Image Grid.Column="2" Source="icon_menu.png" />
+                <Label
+                    Grid.Column="3"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="All"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Grid>-->
+
+            <ScrollView>
+                <Grid
+                    ColumnDefinitions="*, *"
+                    ColumnSpacing="28"
+                    VerticalOptions="FillAndExpand">
+                    <Grid Grid.Column="0" RowSpacing="28">
+                        <BoxView Grid.Row="0" HeightRequest="260" />
+                        <Image
+                            Grid.Row="0"
+                            Margin="8"
+                            Source="item1.png"
+                            VerticalOptions="Start" />
+                        <Grid
+                            Grid.Row="0"
+                            Margin="20"
+                            RowDefinitions="*,*,*"
+                            RowSpacing="0"
+                            VerticalOptions="End">
+                            <Label
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="Cold Coffee" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="10"
+                                Text="Lime with Coffee" />
+                            <Label
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="$24.00" />
+                            <Image
+                                Grid.Row="2"
+                                HorizontalOptions="End"
+                                Source="icon_heart" />
+                        </Grid>
+
+                        <BoxView Grid.Row="1" HeightRequest="260" />
+                        <Image
+                            Grid.Row="1"
+                            Margin="8"
+                            Source="item3.png"
+                            VerticalOptions="Start" />
+                        <Grid
+                            Grid.Row="1"
+                            Margin="20"
+                            RowDefinitions="*,*,*"
+                            RowSpacing="0"
+                            VerticalOptions="End">
+                            <Label
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="Strawberry Cake" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="10"
+                                Text="Cream with Strawberry" />
+                            <Label
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="$12.00" />
+                            <Image
+                                Grid.Row="2"
+                                HorizontalOptions="End"
+                                Source="icon_heart" />
+                        </Grid>
+
+                    </Grid>
+                    <Grid
+                        Grid.Column="1"
+                        HeightRequest="400"
+                        RowDefinitions="*, *, Auto"
+                        RowSpacing="28">
+                        <BoxView Grid.Row="0" HeightRequest="220" />
+                        <Image
+                            Grid.Row="0"
+                            Margin="8,-4,8,8"
+                            Source="item2.png"
+                            VerticalOptions="Start" />
+                        <Grid
+                            Grid.Row="0"
+                            Margin="20"
+                            RowDefinitions="*,*,*"
+                            RowSpacing="0"
+                            VerticalOptions="End">
+                            <Label
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="Blueberry Cake" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="10"
+                                Text="Cream with Berry" />
+                            <Label
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="$65.00" />
+                            <Image
+                                Grid.Row="2"
+                                HorizontalOptions="End"
+                                Source="icon_heart" />
+                        </Grid>
+
+                        <BoxView Grid.Row="1" HeightRequest="220" />
+                        <Image
+                            Grid.Row="1"
+                            Margin="8,-4,8,8"
+                            Source="item4.png"
+                            VerticalOptions="Start" />
+                        <Grid
+                            Grid.Row="1"
+                            Margin="20"
+                            RowDefinitions="*,*,*"
+                            RowSpacing="0"
+                            VerticalOptions="End">
+                            <Label
+                                Grid.Row="0"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="Hot Coffee" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="10"
+                                Text="Fresh Coffee" />
+                            <Label
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                Text="$30.00" />
+                            <Image
+                                Grid.Row="2"
+                                HorizontalOptions="End"
+                                Source="icon_heart" />
+                        </Grid>
+
+                        <BoxView Grid.Row="2" HeightRequest="20" />
+                        <Label
+                            Grid.Row="2"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="View More"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
