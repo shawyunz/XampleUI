@@ -6,12 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />  
+    <None Remove="Assest\Gilroy-ExtraBold.otf" />
+    <None Remove="Assest\Gilroy-Light.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assest\Gilroy-ExtraBold.otf" />
+    <EmbeddedResource Include="Assest\Gilroy-Light.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\DribCakes\CakeDetial.xaml">
+    <Compile Update="Views\DribCakes\CakeDetail.xaml.cs">
+      <DependentUpon>CakeDetail.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\DribCakes\CakeDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DribCakes\CakeList.xaml">

@@ -2,9 +2,14 @@
 <ContentPage
     x:Class="XampleUI.Views.DribCakes.DribCakes"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <Grid>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
             <Image Aspect="AspectFill" Source="cake_bg.png" />
             <BoxView
                 Margin="0,0,-20,-20"
@@ -13,11 +18,7 @@
                 HeightRequest="80"
                 HorizontalOptions="End"
                 VerticalOptions="End"
-                WidthRequest="80">
-                <BoxView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                </BoxView.GestureRecognizers>
-            </BoxView>
+                WidthRequest="80" />
             <Label
                 FontSize="20"
                 Text="&gt;"

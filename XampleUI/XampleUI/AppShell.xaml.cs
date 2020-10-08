@@ -12,8 +12,10 @@ namespace XampleUI
 			InitializeComponent();
 			Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
 			Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+
 			Routing.RegisterRoute(nameof(DribCakes), typeof(DribCakes));
 			Routing.RegisterRoute(nameof(CakeList), typeof(CakeList));
+			Routing.RegisterRoute(nameof(CakeDetail), typeof(CakeDetail));
 		}
 
 		private async void OnMenuItemClicked(object sender, EventArgs e)

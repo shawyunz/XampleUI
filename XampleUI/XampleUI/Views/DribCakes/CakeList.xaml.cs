@@ -16,5 +16,10 @@ namespace XampleUI.Views.DribCakes
 		{
 			InitializeComponent();
 		}
+
+		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+			await Shell.Current.GoToAsync("CakeDetail");
+		}
 	}
 }

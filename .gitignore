@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+XampleUI/XampleUI/Assest/Gilroy-ExtraBold.otf
+XampleUI/XampleUI/Assest/Gilroy-Light.otf
