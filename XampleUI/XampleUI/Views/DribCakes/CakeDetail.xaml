@@ -3,14 +3,181 @@
     x:Class="XampleUI.Views.DribCakes.CakeDetail"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#dededd"
     Shell.NavBarIsVisible="False"
     Shell.TabBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ExBoldLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="GilroyEB" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="LightLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="GilroyL" />
+                <Setter Property="TextColor" Value="DarkGray" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="30" BackgroundColor="#dededd">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="BoxView">
+                            <Setter Property="WidthRequest" Value="40" />
+                            <Setter Property="HeightRequest" Value="40" />
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="CornerRadius" Value="20" />
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+
+                <StackLayout
+                    Margin="0,6"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <Image
+                        HorizontalOptions="Start"
+                        Source="icon_back.png"
+                        WidthRequest="40" />
+                    <Image
+                        HorizontalOptions="EndAndExpand"
+                        Source="icon_more.png"
+                        WidthRequest="44" />
+                </StackLayout>
+                <Image
+                    Margin="0,16"
+                    HorizontalOptions="Center"
+                    Source="item2large.png" />
+                <Image
+                    Margin="0,0,0,20"
+                    HorizontalOptions="Center"
+                    Source="icon_indicator.png"
+                    WidthRequest="72" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="26"
+                        Style="{StaticResource ExBoldLabel}"
+                        Text="Blueberry Cake"
+                        TextColor="Black" />
+                    <Image
+                        BackgroundColor="Gray"
+                        HorizontalOptions="EndAndExpand"
+                        Source="icon_star.png"
+                        WidthRequest="72" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource ExBoldLabel}"
+                        Text="5.0"
+                        TextColor="Black" />
+                </StackLayout>
+                <Grid>
+                    <Label
+                        Grid.Row="0"
+                        FontSize="12"
+                        LineHeight="1.5"
+                        Style="{StaticResource LightLabel}"
+                        Text="Blue berry cake with fresh cream taste and fresh ingredients Of Blueberry. We have wide range of cakes on our store. Also we can order for events." />
+                    <StackLayout
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        Spacing="20">
+                        <Grid
+                            HeightRequest="80"
+                            RowSpacing="0"
+                            VerticalOptions="FillAndExpand"
+                            WidthRequest="172">
+                            <BoxView Grid.Row="0" Grid.RowSpan="2" />
+                            <Label
+                                Grid.Row="0"
+                                Margin="18,20,18,0"
+                                FontSize="12"
+                                Style="{StaticResource LightLabel}"
+                                Text="Delivery Time" />
+                            <Label
+                                Grid.Row="1"
+                                Margin="52,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Style="{StaticResource ExBoldLabel}"
+                                Text="45 Mins" />
+                            <Image
+                                Grid.Row="1"
+                                Margin="14,0,14,0"
+                                HorizontalOptions="Start"
+                                Source="icon_clock.png"
+                                WidthRequest="32" />
+                        </Grid>
+                        <Grid
+                            HeightRequest="80"
+                            RowSpacing="0"
+                            VerticalOptions="FillAndExpand"
+                            WidthRequest="100">
+                            <BoxView Grid.Row="0" Grid.RowSpan="2" />
+                            <Label
+                                Grid.Row="0"
+                                Margin="18,20,18,0"
+                                FontSize="12"
+                                Style="{StaticResource LightLabel}"
+                                Text="Total Price" />
+                            <Label
+                                Grid.Row="1"
+                                Margin="18,0"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Style="{StaticResource ExBoldLabel}"
+                                Text="$65.00" />
+                        </Grid>
+                    </StackLayout>
+
+                    <Grid
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Margin="0,0,-52,-40"
+                        HeightRequest="160"
+                        HorizontalOptions="End"
+                        RowSpacing="0"
+                        VerticalOptions="End"
+                        WidthRequest="66">
+                        <BoxView
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            BackgroundColor="#b81f1c"
+                            CornerRadius="30" />
+                        <BoxView
+                            Grid.Row="0"
+                            Margin="14,0"
+                            BackgroundColor="White"
+                            CornerRadius="17"
+                            HeightRequest="34"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            WidthRequest="34" />
+                        <Label
+                            Grid.Row="0"
+                            Margin="28,24,26,0"
+                            FontAttributes="Bold"
+                            FontSize="24"
+                            Style="{StaticResource ExBoldLabel}"
+                            Text="+"
+                            TextColor="Black" />
+                        <Label
+                            Grid.Row="1"
+                            Margin="12,0,-16,32"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Rotation="-90"
+                            Style="{StaticResource ExBoldLabel}"
+                            Text="Buy Now"
+                            TextColor="White" />
+                    </Grid>
+                </Grid>
+                <!--    -->
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

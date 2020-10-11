@@ -281,7 +281,15 @@
                             HorizontalOptions="End"
                             VerticalOptions="Center"
                             WidthRequest="32" />
-                        <Label
+
+                        <Image
+                            Grid.Row="2"
+                            Margin="16,0"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="End"
+                            Source="icon_arrow2.png"
+                            VerticalOptions="Center" />
+                        <!--<Label
                             Grid.Row="2"
                             Margin="20,0"
                             FontAttributes="Bold"
@@ -289,7 +297,7 @@
                             HorizontalOptions="End"
                             Text="&#xf852;"
                             TextColor="#3d9165"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center" />-->
                     </Grid>
                 </Grid>
             </StackLayout>

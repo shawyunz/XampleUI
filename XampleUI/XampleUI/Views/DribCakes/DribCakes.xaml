@@ -19,6 +19,12 @@
                 HorizontalOptions="End"
                 VerticalOptions="End"
                 WidthRequest="80" />
+            <Image
+                Margin="0,0,8,8"
+                HorizontalOptions="End"
+                Source="icon_arrow.png"
+                VerticalOptions="End"
+                WidthRequest="44" />
             <Label
                 FontSize="20"
                 Text="&gt;"
