@@ -10,5 +10,10 @@ namespace XampleUI.Views.DribCakes
 		{
 			InitializeComponent();
 		}
+
+		private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+		{
+			Navigation.PopAsync();
+		}
 	}
 }

@@ -21,7 +21,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="30" BackgroundColor="#dededd">
+            <StackLayout Padding="20,24" BackgroundColor="#dededd">
                 <StackLayout.Resources>
                     <ResourceDictionary>
                         <Style TargetType="BoxView">
@@ -40,22 +40,26 @@
                     <Image
                         HorizontalOptions="Start"
                         Source="icon_back.png"
-                        WidthRequest="40" />
+                        WidthRequest="40">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Image
                         HorizontalOptions="EndAndExpand"
                         Source="icon_more.png"
                         WidthRequest="44" />
                 </StackLayout>
                 <Image
-                    Margin="0,16"
+                    Margin="0,16,0,0"
                     HorizontalOptions="Center"
                     Source="item2large.png" />
                 <Image
-                    Margin="0,0,0,20"
+                    Margin="0,-14,0,24"
                     HorizontalOptions="Center"
                     Source="icon_indicator.png"
                     WidthRequest="72" />
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Margin="16,0" Orientation="Horizontal">
                     <Label
                         FontAttributes="Bold"
                         FontSize="26"
@@ -63,11 +67,12 @@
                         Text="Blueberry Cake"
                         TextColor="Black" />
                     <Image
-                        BackgroundColor="Gray"
+                        Margin="-4,-4,-10,0"
                         HorizontalOptions="EndAndExpand"
                         Source="icon_star.png"
-                        WidthRequest="72" />
+                        WidthRequest="44" />
                     <Label
+                        Margin="0,4,8,0"
                         FontAttributes="Bold"
                         FontSize="20"
                         HorizontalOptions="Start"
@@ -75,7 +80,7 @@
                         Text="5.0"
                         TextColor="Black" />
                 </StackLayout>
-                <Grid>
+                <Grid Margin="16,0">
                     <Label
                         Grid.Row="0"
                         FontSize="12"
@@ -84,17 +89,21 @@
                         Text="Blue berry cake with fresh cream taste and fresh ingredients Of Blueberry. We have wide range of cakes on our store. Also we can order for events." />
                     <StackLayout
                         Grid.Row="1"
+                        Margin="-4,0"
                         Orientation="Horizontal"
                         Spacing="20">
                         <Grid
-                            HeightRequest="80"
+                            HeightRequest="92"
                             RowSpacing="0"
                             VerticalOptions="FillAndExpand"
-                            WidthRequest="172">
-                            <BoxView Grid.Row="0" Grid.RowSpan="2" />
+                            WidthRequest="180">
+                            <BoxView
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                CornerRadius="30" />
                             <Label
                                 Grid.Row="0"
-                                Margin="18,20,18,0"
+                                Margin="22,20,18,0"
                                 FontSize="12"
                                 Style="{StaticResource LightLabel}"
                                 Text="Delivery Time" />
@@ -107,7 +116,7 @@
                                 Text="45 Mins" />
                             <Image
                                 Grid.Row="1"
-                                Margin="14,0,14,0"
+                                Margin="14,0,14,12"
                                 HorizontalOptions="Start"
                                 Source="icon_clock.png"
                                 WidthRequest="32" />
@@ -116,7 +125,7 @@
                             HeightRequest="80"
                             RowSpacing="0"
                             VerticalOptions="FillAndExpand"
-                            WidthRequest="100">
+                            WidthRequest="108">
                             <BoxView Grid.Row="0" Grid.RowSpan="2" />
                             <Label
                                 Grid.Row="0"
@@ -137,7 +146,7 @@
                     <Grid
                         Grid.Row="0"
                         Grid.RowSpan="2"
-                        Margin="0,0,-52,-40"
+                        Margin="0,0,-60,-40"
                         HeightRequest="160"
                         HorizontalOptions="End"
                         RowSpacing="0"
