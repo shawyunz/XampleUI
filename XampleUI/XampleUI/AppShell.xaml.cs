@@ -1,17 +1,20 @@
-﻿using System;
+﻿using Plugin.SharedTransitions;
+using System;
 using Xamarin.Forms;
 using XampleUI.Views;
 using XampleUI.Views.DribCakes;
 
 namespace XampleUI
 {
-	public partial class AppShell : Xamarin.Forms.Shell
+	public partial class AppShell : SharedTransitionShell
 	{
 		public AppShell()
+
 		{
 			InitializeComponent();
 			Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
 			Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+			Routing.RegisterRoute(nameof(AboutTransitionPage), typeof(AboutTransitionPage));
 
 			Routing.RegisterRoute(nameof(DribCakes), typeof(DribCakes));
 			Routing.RegisterRoute(nameof(CakeList), typeof(CakeList));

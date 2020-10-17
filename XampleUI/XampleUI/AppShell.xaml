@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
+<sharedTransitions:SharedTransitionShell
     x:Class="XampleUI.AppShell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cakes="clr-namespace:XampleUI.Views.DribCakes"
     xmlns:local="clr-namespace:XampleUI.Views"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     Title="XampleUI">
 
     <!--
@@ -13,7 +14,7 @@
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
-    <Shell.Resources>
+    <sharedTransitions:SharedTransitionShell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
@@ -80,7 +81,7 @@
                 </Setter>
             </Style>
         </ResourceDictionary>
-    </Shell.Resources>
+    </sharedTransitions:SharedTransitionShell.Resources>
 
     <!--
         When the Flyout is visible this defines the content to display in the flyout.
@@ -157,4 +158,4 @@
 
     -->
 
-</Shell>
+</sharedTransitions:SharedTransitionShell>

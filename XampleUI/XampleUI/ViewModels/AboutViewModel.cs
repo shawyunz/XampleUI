@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using XampleUI.Views;
 
 namespace XampleUI.ViewModels
 {
@@ -11,8 +12,14 @@ namespace XampleUI.ViewModels
 		{
 			Title = "About";
 			OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
+			NavigateClickCommand = new Command(OnNavClick);
 		}
 
 		public ICommand OpenWebCommand { get; }
+		public ICommand NavigateClickCommand { get; }
+		private async void OnNavClick(object obj)
+		{
+			await Shell.Current.GoToAsync(nameof(AboutTransitionPage));
+		}
 	}
 }

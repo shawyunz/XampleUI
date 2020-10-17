@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XampleUI.Views.ItemDetailPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="XampleUI.Views.ItemDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    Title="{Binding Title}">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
+    <StackLayout Padding="15" Spacing="20">
+        <Label FontSize="Medium" Text="Text:" />
+        <Label FontSize="Small" Text="{Binding Text}" />
+        <Label FontSize="Medium" Text="Description:" />
+        <Label FontSize="Small" Text="{Binding Description}" />
+        <Image
+            sharedTransitions:Transition.Name="{Binding Text}"
+            Aspect="Fill"
+            HeightRequest="200"
+            Source="{Binding Image}" />
     </StackLayout>
-    
+
 </ContentPage>

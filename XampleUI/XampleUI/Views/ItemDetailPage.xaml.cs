@@ -11,5 +11,10 @@ namespace XampleUI.Views
 			InitializeComponent();
 			BindingContext = new ItemDetailViewModel();
 		}
+
+		private void Button_Clicked(object sender, System.EventArgs e)
+		{
+			//NavigationPage.Push(new Page2());
+		}
 	}
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using XampleUI.Models;
 using Xamarin.Forms;
 
 namespace XampleUI.ViewModels
@@ -11,6 +9,7 @@ namespace XampleUI.ViewModels
 	{
 		private string itemId;
 		private string text;
+		private string image;
 		private string description;
 		public string Id { get; set; }
 
@@ -18,6 +17,12 @@ namespace XampleUI.ViewModels
 		{
 			get => text;
 			set => SetProperty(ref text, value);
+		}
+
+		public string Image
+		{
+			get => image;
+			set => SetProperty(ref image, value);
 		}
 
 		public string Description
@@ -47,6 +52,7 @@ namespace XampleUI.ViewModels
 				Id = item.Id;
 				Text = item.Text;
 				Description = item.Description;
+				Image = item.Image;
 			}
 			catch (Exception)
 			{
