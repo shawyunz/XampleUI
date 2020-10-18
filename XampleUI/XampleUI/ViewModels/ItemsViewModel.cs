@@ -13,6 +13,7 @@ namespace XampleUI.ViewModels
 	public class ItemsViewModel : BaseViewModel
 	{
 		private Item _selectedItem;
+		public bool HasCart { get; set; }
 
 		public ObservableCollection<Item> Items { get; }
 		public Command LoadItemsCommand { get; }
@@ -30,7 +31,7 @@ namespace XampleUI.ViewModels
 			AddItemCommand = new Command(OnAddItem);
 		}
 
-		async Task ExecuteLoadItemsCommand()
+		private async Task ExecuteLoadItemsCommand()
 		{
 			IsBusy = true;
 
@@ -74,7 +75,7 @@ namespace XampleUI.ViewModels
 			await Shell.Current.GoToAsync(nameof(NewItemPage));
 		}
 
-		async void OnItemSelected(Item item)
+		private async void OnItemSelected(Item item)
 		{
 			if (item == null)
 				return;

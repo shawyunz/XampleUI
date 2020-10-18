@@ -20,37 +20,63 @@
         x:DataType="local:ItemsViewModel"
         Command="{Binding LoadItemsCommand}"
         IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView
-            x:Name="ItemsListView"
-            ItemsSource="{Binding Items}"
-            SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
-                        <Image
-                            sharedTransitions:Transition.Name="{Binding Text}"
-                            HeightRequest="60"
-                            HorizontalOptions="Start"
-                            Source="{Binding Image}" />
-                        <Label
-                            FontSize="16"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemTextStyle}"
-                            Text="{Binding Text}" />
-                        <Label
-                            FontSize="13"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            Text="{Binding Description}" />
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"
-                                CommandParameter="{Binding .}"
-                                NumberOfTapsRequired="1" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <StackLayout Orientation="Vertical">
+            <CollectionView
+                x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None"
+                VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Item">
+                            <Image
+                                sharedTransitions:Transition.Name="{Binding Text}"
+                                HeightRequest="60"
+                                HorizontalOptions="Start"
+                                Source="{Binding Image}" />
+                            <Label
+                                FontSize="16"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                Text="{Binding Text}" />
+                            <Label
+                                FontSize="13"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Text="{Binding Description}" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Switch
+                x:Name="PageSwitch"
+                Margin="16,0"
+                IsToggled="{Binding HasCart}" />
+            <CollectionView
+                x:Name="ItemsListView2"
+                HeightRequest="100"
+                IsVisible="{Binding Source={x:Reference PageSwitch}, Path=IsToggled}"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Item">
+                            <Image
+                                sharedTransitions:Transition.Name="{Binding Text}"
+                                HeightRequest="60"
+                                HorizontalOptions="Start"
+                                Source="{Binding Image}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
     </RefreshView>
 </ContentPage>

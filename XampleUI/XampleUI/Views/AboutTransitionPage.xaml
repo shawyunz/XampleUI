@@ -6,7 +6,6 @@
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     xmlns:vm="clr-namespace:XampleUI.ViewModels"
     Title="{Binding Title}">
-
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
@@ -16,7 +15,7 @@
                 HorizontalOptions="CenterAndExpand"
                 Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" />
-
+            <Button Clicked="Button_Clicked" Text="Back" />
             <Image
                 sharedTransitions:Transition.Name="xflogo"
                 BackgroundColor="Gray"
