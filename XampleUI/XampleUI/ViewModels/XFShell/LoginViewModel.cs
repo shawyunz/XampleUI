@@ -1,10 +1,7 @@
-﻿using XampleUI.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using XampleUI.Views.XFShell;
 
-namespace XampleUI.ViewModels
+namespace XampleUI.ViewModels.XFShell
 {
 	public class LoginViewModel : BaseViewModel
 	{

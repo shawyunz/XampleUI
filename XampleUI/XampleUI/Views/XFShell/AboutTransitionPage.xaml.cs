@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XampleUI.Views
+namespace XampleUI.Views.XFShell
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AboutTransitionPage : ContentPage

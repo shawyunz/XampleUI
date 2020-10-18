@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 using XampleUI.Models;
-using XampleUI.ViewModels;
+using XampleUI.ViewModels.XFShell;
 
-namespace XampleUI.Views
+namespace XampleUI.Views.XFShell
 {
 	public partial class NewItemPage : ContentPage
 	{

@@ -2,9 +2,9 @@
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using XampleUI.Views;
+using XampleUI.Views.XFShell;
 
-namespace XampleUI.ViewModels
+namespace XampleUI.ViewModels.XFShell
 {
 	public class AboutViewModel : BaseViewModel
 	{

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using Xamarin.Forms;
-using XampleUI.ViewModels;
+using XampleUI.ViewModels.XFShell;
 
-namespace XampleUI.Views
+namespace XampleUI.Views.XFShell
 {
 	public partial class ItemDetailPage : ContentPage
 	{

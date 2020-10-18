@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XampleUI.Views.ItemsPage"
+    x:Class="XampleUI.Views.XFShell.ItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XampleUI.ViewModels"
+    xmlns:local="clr-namespace:XampleUI.ViewModels.XFShell"
     xmlns:model="clr-namespace:XampleUI.Models"
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     x:Name="BrowseItemsPage"

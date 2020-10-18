@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Xamarin.Forms;
 
-namespace XampleUI.ViewModels
+namespace XampleUI.ViewModels.XFShell
 {
 	[QueryProperty(nameof(ItemId), nameof(ItemId))]
 	public class ItemDetailViewModel : BaseViewModel

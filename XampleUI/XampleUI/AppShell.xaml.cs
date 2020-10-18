@@ -1,7 +1,7 @@
 ﻿using Plugin.SharedTransitions;
 using System;
 using Xamarin.Forms;
-using XampleUI.Views;
+using XampleUI.Views.XFShell;
 using XampleUI.Views.DribCakes;
 
 namespace XampleUI

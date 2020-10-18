@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using XampleUI.Models;
 using Xamarin.Forms;
+using XampleUI.Models;
 
-namespace XampleUI.ViewModels
+namespace XampleUI.ViewModels.XFShell
 {
 	public class NewItemViewModel : BaseViewModel
 	{

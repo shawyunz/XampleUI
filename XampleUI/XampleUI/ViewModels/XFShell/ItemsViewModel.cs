@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using XampleUI.Models;
-using XampleUI.Views;
+using XampleUI.Views.XFShell;
 
-namespace XampleUI.ViewModels
+namespace XampleUI.ViewModels.XFShell
 {
 	public class ItemsViewModel : BaseViewModel
 	{
