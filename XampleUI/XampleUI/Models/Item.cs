@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XampleUI.Models
+﻿namespace XampleUI.Models
 {
 	public class Item
 	{
@@ -8,5 +6,6 @@ namespace XampleUI.Models
 		public string Image { get; set; }
 		public string Text { get; set; }
 		public string Description { get; set; }
+		public double Price { get; set; }
 	}
 }

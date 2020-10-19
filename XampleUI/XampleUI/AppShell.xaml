@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cakes="clr-namespace:XampleUI.Views.DribCakes"
+    xmlns:grocs="clr-namespace:XampleUI.Views.DribGroc"
     xmlns:local="clr-namespace:XampleUI.Views.XFShell"
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     Title="XampleUI">
@@ -95,24 +96,24 @@
             Icon="tab_about.png"
             Route="AboutPage" />
         <ShellContent
-            Title="Browse"
+            Title="Shell"
             ContentTemplate="{DataTemplate local:ItemsPage}"
             Icon="tab_feed.png" />
         <ShellContent
-            Title="CakeUI"
+            Title="Cake"
             ContentTemplate="{DataTemplate cakes:DribCakes}"
-            Icon="icon_heart.png" />
+            Icon="btncake.png" />
         <ShellContent
-            Title="CakeList"
-            ContentTemplate="{DataTemplate cakes:CakeList}"
-            Icon="icon_heart.png" />
+            Title="Groc"
+            ContentTemplate="{DataTemplate grocs:GrocList}"
+            Icon="icon_cart.png" />
     </FlyoutItem>
 
     <!--  When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem
+    <!--<MenuItem
         Clicked="OnMenuItemClicked"
         StyleClass="MenuItemLayoutStyle"
-        Text="Logout" />
+        Text="Logout" />-->
 
     <!--
         This defines content that won't show up in a flyout menu. When this content is active the flyout menu won't be available.
@@ -157,5 +158,4 @@
     </Shell.MenuItemTemplate>
 
     -->
-
 </sharedTransitions:SharedTransitionShell>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XampleUI.Views.DribGroc.GrocDetail"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    xmlns:vm="clr-namespace:XampleUI.ViewModels.Groc">
+
+    <ContentPage.BindingContext>
+        <vm:GrocDetailViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="15" Spacing="20">
+        <Label FontSize="Medium" Text="Text:" />
+        <Label FontSize="Small" Text="{Binding CurrentItem.Text}" />
+        <Label FontSize="Medium" Text="Description:" />
+        <Label FontSize="Small" Text="{Binding CurrentItem.Description}" />
+        <Image
+            sharedTransitions:Transition.Name="{Binding CurrentItem.Text}"
+            Aspect="Fill"
+            HeightRequest="200"
+            Source="{Binding CurrentItem.Image}" />
+    </StackLayout>
+</ContentPage>
