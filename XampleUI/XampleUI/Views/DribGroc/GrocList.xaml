@@ -8,10 +8,6 @@
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     xmlns:vm="clr-namespace:XampleUI.ViewModels.Groc">
 
-    <ContentPage.BindingContext>
-        <vm:GrocsViewModel />
-    </ContentPage.BindingContext>
-
     <RefreshView
         x:DataType="local:GrocsViewModel"
         Command="{Binding LoadItemsCommand}"

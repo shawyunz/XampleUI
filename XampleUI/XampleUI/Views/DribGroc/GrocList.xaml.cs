@@ -1,20 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XampleUI.ViewModels.Groc;
 
 namespace XampleUI.Views.DribGroc
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GrocList : ContentPage
 	{
+		private GrocsViewModel _viewModel;
+
 		public GrocList()
 		{
 			InitializeComponent();
+
+			BindingContext = _viewModel = new GrocsViewModel();
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			_viewModel.OnAppearing();
 		}
 	}
 }

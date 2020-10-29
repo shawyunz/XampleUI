@@ -26,9 +26,18 @@
                 ItemsSource="{Binding Items}"
                 SelectionMode="None"
                 VerticalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        SnapPointsAlignment="Start"
+                        SnapPointsType="MandatorySingle" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Item">
+                        <StackLayout
+                            Padding="10"
+                            x:DataType="model:Item"
+                            HeightRequest="600">
                             <Image
                                 sharedTransitions:Transition.Name="{Binding Text}"
                                 HeightRequest="60"
