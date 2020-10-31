@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XampleUI.Views.DribGroc.GrocList"
+    x:Class="XampleUI.Views.DribGrocs.GrocList"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:XampleUI.ViewModels.Groc"
     xmlns:model="clr-namespace:XampleUI.Models"
-    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
-    xmlns:vm="clr-namespace:XampleUI.ViewModels.Groc">
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
 
     <RefreshView
         x:DataType="local:GrocsViewModel"

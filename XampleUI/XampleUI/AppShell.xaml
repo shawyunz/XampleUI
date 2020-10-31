@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cakes="clr-namespace:XampleUI.Views.DribCakes"
-    xmlns:grocs="clr-namespace:XampleUI.Views.DribGroc"
+    xmlns:grocs="clr-namespace:XampleUI.Views.DribGrocs"
     xmlns:local="clr-namespace:XampleUI.Views.XFShell"
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     Title="XampleUI">

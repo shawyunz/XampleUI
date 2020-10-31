@@ -40,10 +40,10 @@
     <EmbeddedResource Update="Views\DribCakes\DribCakes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DribGroc\GrocDetail.xaml">
+    <EmbeddedResource Update="Views\DribGrocs\GrocDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DribGroc\GrocList.xaml">
+    <EmbeddedResource Update="Views\DribGrocs\GrocList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

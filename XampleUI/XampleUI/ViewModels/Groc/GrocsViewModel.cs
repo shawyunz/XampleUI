@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using XampleUI.Models;
-using XampleUI.Views.DribGroc;
+using XampleUI.Views.DribGrocs;
 
 namespace XampleUI.ViewModels.Groc
 {

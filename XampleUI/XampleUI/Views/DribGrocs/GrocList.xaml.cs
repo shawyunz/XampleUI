@@ -2,7 +2,7 @@
 using Xamarin.Forms.Xaml;
 using XampleUI.ViewModels.Groc;
 
-namespace XampleUI.Views.DribGroc
+namespace XampleUI.Views.DribGrocs
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GrocList : ContentPage

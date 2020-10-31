@@ -3,7 +3,7 @@ using System;
 using Xamarin.Forms;
 using XampleUI.Views.XFShell;
 using XampleUI.Views.DribCakes;
-using XampleUI.Views.DribGroc;
+using XampleUI.Views.DribGrocs;
 
 namespace XampleUI
 {
