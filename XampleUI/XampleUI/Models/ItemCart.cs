@@ -10,6 +10,7 @@
 			Image = item.Image;
 			Description = item.Description;
 			Price = item.Price;
+			Text = item.Text;
 		}
 	}
 }

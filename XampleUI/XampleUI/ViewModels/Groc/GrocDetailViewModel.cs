@@ -42,7 +42,7 @@ namespace XampleUI.ViewModels.Groc
 		{
 			var cartItem = new ItemCart(CurrentItem)
 			{
-				Quantity = Quantity
+				Quantity = 3
 			};
 			await DataStore.AddItemToCartAsync(cartItem);
 		}

@@ -25,6 +25,7 @@ namespace XampleUI.ViewModels.Groc
 		{
 			Title = "Browse";
 			Grocs = new ObservableCollection<Item>();
+			GrocsCart = new ObservableCollection<ItemCart>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
 			ItemTapped = new Command<Item>(OnItemSelected);
@@ -53,10 +54,21 @@ namespace XampleUI.ViewModels.Groc
 			}
 		}
 
-		public void OnAppearing()
+		public async void OnAppearing()
 		{
 			IsBusy = true;
 			SelectedItem = null;
+
+			GrocsCart.Clear();
+			var items = await DataStore.GetGrocsCartAsync();
+			if (items is null)
+			{
+				return;
+			}
+			foreach (var item in items)
+			{
+				GrocsCart.Add(item);
+			}
 		}
 
 		public Item SelectedItem

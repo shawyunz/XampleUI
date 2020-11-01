@@ -88,7 +88,7 @@ namespace XampleUI.Services
 			return await Task.FromResult(grocItems);
 		}
 
-		public async Task<IEnumerable<Item>> GetGrocsCartAsync(bool forceRefresh = false)
+		public async Task<IEnumerable<ItemCart>> GetGrocsCartAsync(bool forceRefresh = false)
 		{
 			return await Task.FromResult(grocCartItems);
 		}

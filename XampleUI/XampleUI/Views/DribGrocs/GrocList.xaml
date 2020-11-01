@@ -105,7 +105,7 @@
                 <CollectionView
                     x:Name="ItemsListView2"
                     HeightRequest="35"
-                    ItemsSource="{Binding Grocs}"
+                    ItemsSource="{Binding GrocsCart}"
                     SelectionMode="None"
                     VerticalOptions="Center">
                     <CollectionView.ItemsLayout>

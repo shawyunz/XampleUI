@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XampleUI.ViewModels.Groc;
 
 namespace XampleUI.Views.DribGrocs
 {
@@ -15,6 +10,7 @@ namespace XampleUI.Views.DribGrocs
 		public GrocDetail()
 		{
 			InitializeComponent();
+			BindingContext = new GrocDetailViewModel();
 		}
 	}
 }

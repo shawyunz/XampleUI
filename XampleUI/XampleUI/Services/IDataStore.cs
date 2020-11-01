@@ -8,8 +8,6 @@ namespace XampleUI.Services
 	{
 		Task<bool> AddItemAsync(T item);
 
-		Task<bool> AddItemToCartAsync(ItemCart item);
-
 		Task<bool> UpdateItemAsync(T item);
 
 		Task<bool> DeleteItemAsync(string id);
@@ -21,5 +19,8 @@ namespace XampleUI.Services
 		Task<T> GetGrocAsync(string id);
 
 		Task<IEnumerable<T>> GetGrocsAsync(bool forceRefresh = false);
+
+		Task<bool> AddItemToCartAsync(ItemCart item);
+		Task<IEnumerable<ItemCart>> GetGrocsCartAsync(bool forceRefresh = false);
 	}
 }
