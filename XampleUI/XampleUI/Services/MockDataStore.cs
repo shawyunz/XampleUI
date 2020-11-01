@@ -26,12 +26,12 @@ namespace XampleUI.Services
 
 			grocItems = new List<Item>()
 			{
-				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Description="Les Framboises 60g",  Image="grocs_item0.png", Price=8.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Description="Les Framboises 60g", Image="grocs_item0.png", Price=8.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Description="500g",  Image="grocs_item1.png", Price=7.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Rummo Fusilli No 48 Pasta", Description="500g", Image="grocs_item2.png", Price=14.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Biona organic White Spelt Fusilli", Description="500g",  Image="grocs_item3.png", Price=3.69 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Description="500g",  Image="grocs_item1.png", Price=7.99 }
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Size="Les Framboises 60g",  Image="grocs_item0.png", Price=8.99, Description="" },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Size="Les Framboises 60g", Image="grocs_item0.png", Price=8.99, Description="" },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Size="500g",  Image="grocs_item1.png", Price=7.99, Description="" },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Rummo Fusilli No 48 Pasta", Size="500g", Image="grocs_item2.png", Price=14.99, Description="" },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Biona organic White Spelt Fusilli", Size="500g",  Image="grocs_item3.png", Price=3.69, Description="The Lenta Lavorazione method comes directly from the traditional and artisan way of making pasta. Careful research into the best" },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Size="500g",  Image="grocs_item1.png", Price=7.99, Description="" }
 			};
 
 			grocCartItems = new List<ItemCart>();

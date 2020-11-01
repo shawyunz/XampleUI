@@ -12,5 +12,10 @@ namespace XampleUI.Views.DribGrocs
 			InitializeComponent();
 			BindingContext = new GrocDetailViewModel();
 		}
+
+		private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+		{
+			Navigation.PopAsync();
+		}
 	}
 }

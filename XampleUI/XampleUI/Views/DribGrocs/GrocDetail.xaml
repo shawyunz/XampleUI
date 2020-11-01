@@ -3,21 +3,128 @@
     x:Class="XampleUI.Views.DribGrocs.GrocDetail"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    Shell.NavBarIsVisible="False">
 
-    <StackLayout Padding="15" Spacing="20">
-        <Label FontSize="Medium" Text="Text:" />
-        <Label FontSize="Small" Text="{Binding CurrentItem.Text}" />
-        <Label FontSize="Medium" Text="Description:" />
-        <Label FontSize="Small" Text="{Binding CurrentItem.Description}" />
-        <Image
-            sharedTransitions:Transition.Name="{Binding CurrentItem.Text}"
-            Aspect="AspectFit"
-            HeightRequest="200"
-            Source="{Binding CurrentItem.Image}" />
-        <Button
-            Command="{Binding AddItemCommand}"
-            CommandParameter="{Binding CurrentItem}"
-            Text="Add" />
+    <StackLayout>
+        <Grid BackgroundColor="White" HeightRequest="60">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+            <Image
+                Margin="16,0"
+                HeightRequest="34"
+                HorizontalOptions="StartAndExpand"
+                Source="icon_back"
+                VerticalOptions="EndAndExpand" />
+        </Grid>
+        <ScrollView>
+            <StackLayout Padding="36,16" Spacing="20">
+                <Image
+                    Margin="0,0,0,32"
+                    sharedTransitions:Transition.Name="{Binding CurrentItem.Text}"
+                    Aspect="AspectFit"
+                    HeightRequest="228"
+                    Source="{Binding CurrentItem.Image}" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="36"
+                    Text="{Binding CurrentItem.Text}"
+                    TextColor="Black" />
+
+                <Label
+                    Margin="0,-8,0,4"
+                    FontSize="14"
+                    Text="{Binding CurrentItem.Size}"
+                    TextColor="Gray" />
+
+                <StackLayout Orientation="Horizontal">
+                    <Grid HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="White"
+                            BorderColor="#DDDDDD"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="40"
+                            VerticalOptions="Center"
+                            WidthRequest="100" />
+
+                        <Label
+                            Margin="16,-2,0,6"
+                            FontSize="36"
+                            HorizontalOptions="Start"
+                            Text="-"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="2"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Label
+                            Margin="0,-4,16,0"
+                            FontSize="21"
+                            HorizontalOptions="End"
+                            Text="+"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                    </Grid>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="36"
+                        Text="{Binding CurrentItem.Price, StringFormat='{0:c}'}"
+                        TextColor="Black" />
+                </StackLayout>
+
+                <Label
+                    Margin="0,14,0,0"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="About the product"
+                    TextColor="Black" />
+
+                <Label
+                    FontSize="15"
+                    Text="{Binding CurrentItem.Description}"
+                    TextColor="Gray" />
+
+            </StackLayout>
+        </ScrollView>
+        <StackLayout
+            Padding="36,0"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Grid HorizontalOptions="Start">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="White"
+                    BorderColor="#DDDDDD"
+                    CornerRadius="30"
+                    HasShadow="False"
+                    HeightRequest="54"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="54" />
+                <Image
+                    Margin="14,0"
+                    Source="icon_heart.png"
+                    VerticalOptions="Center"
+                    WidthRequest="28" />
+            </Grid>
+            <Button
+                Margin="0,20,0,10"
+                BackgroundColor="#ffbc41"
+                Command="{Binding AddItemCommand}"
+                CommandParameter="{Binding CurrentItem}"
+                CornerRadius="40"
+                HeightRequest="54"
+                HorizontalOptions="EndAndExpand"
+                Text="Add to cart"
+                TextColor="Black"
+                WidthRequest="234" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

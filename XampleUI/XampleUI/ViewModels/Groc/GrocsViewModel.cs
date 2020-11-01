@@ -69,6 +69,8 @@ namespace XampleUI.ViewModels.Groc
 			{
 				GrocsCart.Add(item);
 			}
+
+			OnPropertyChanged(nameof(CartCount));
 		}
 
 		public Item SelectedItem
