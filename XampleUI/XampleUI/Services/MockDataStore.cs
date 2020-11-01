@@ -10,7 +10,7 @@ namespace XampleUI.Services
 	{
 		private readonly List<Item> items;
 		private readonly List<Item> grocItems;
-		private readonly List<ItemCart> cartItems;
+		private readonly List<ItemCart> grocCartItems;
 
 		public MockDataStore()
 		{
@@ -26,15 +26,15 @@ namespace XampleUI.Services
 
 			grocItems = new List<Item>()
 			{
-				new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.",  Image="item1.png", Price=6.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.", Image="item2.png", Price=6.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description.",  Image="item3.png", Price=6.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description.", Image="item4.png", Price=6.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description.",  Image="item1.png", Price=6.99 },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description.",  Image="item2.png", Price=6.99 }
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Description="Les Framboises 60g",  Image="grocs_item0.png", Price=8.99 },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Description="Les Framboises 60g", Image="grocs_item0.png", Price=8.99 },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Description="500g",  Image="grocs_item1.png", Price=7.99 },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Rummo Fusilli No 48 Pasta", Description="500g", Image="grocs_item2.png", Price=14.99 },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Biona organic White Spelt Fusilli", Description="500g",  Image="grocs_item3.png", Price=3.69 },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Description="500g",  Image="grocs_item1.png", Price=7.99 }
 			};
 
-			cartItems = new List<ItemCart>();
+			grocCartItems = new List<ItemCart>();
 		}
 
 		public async Task<bool> AddItemAsync(Item item)
@@ -46,7 +46,7 @@ namespace XampleUI.Services
 
 		public async Task<bool> AddItemToCartAsync(ItemCart item)
 		{
-			cartItems.Add(item);
+			grocCartItems.Add(item);
 
 			return await Task.FromResult(true);
 		}
@@ -86,6 +86,11 @@ namespace XampleUI.Services
 		public async Task<IEnumerable<Item>> GetGrocsAsync(bool forceRefresh = false)
 		{
 			return await Task.FromResult(grocItems);
+		}
+
+		public async Task<IEnumerable<Item>> GetGrocsCartAsync(bool forceRefresh = false)
+		{
+			return await Task.FromResult(grocCartItems);
 		}
 	}
 }

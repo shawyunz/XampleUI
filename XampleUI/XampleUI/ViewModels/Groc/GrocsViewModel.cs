@@ -17,6 +17,7 @@ namespace XampleUI.ViewModels.Groc
 
 		public ObservableCollection<Item> Grocs { get; }
 		public ObservableCollection<ItemCart> GrocsCart { get; set; }
+		public int CartCount => GrocsCart?.Count ?? 0;
 		public Command LoadItemsCommand { get; }
 		public Command<Item> ItemTapped { get; }
 

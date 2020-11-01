@@ -21,5 +21,10 @@ namespace XampleUI.Views.DribGrocs
 			base.OnAppearing();
 			_viewModel.OnAppearing();
 		}
+
+		private async void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
+		{
+			await DisplayAlert("Detected", "Up", "OK");
+		}
 	}
 }

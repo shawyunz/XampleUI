@@ -5,69 +5,154 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:XampleUI.ViewModels.Groc"
     xmlns:model="clr-namespace:XampleUI.Models"
-    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    BackgroundColor="Black"
+    Shell.NavBarIsVisible="False">
 
     <RefreshView
         x:DataType="local:GrocsViewModel"
         Command="{Binding LoadItemsCommand}"
         IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <StackLayout Orientation="Vertical">
-            <CollectionView
-                x:Name="ItemsListView"
-                ItemsSource="{Binding Grocs}"
-                SelectionMode="None"
-                VerticalOptions="FillAndExpand">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Item">
-                            <Image
-                                sharedTransitions:Transition.Name="{Binding Text}"
-                                HeightRequest="60"
-                                HorizontalOptions="Start"
-                                Source="{Binding Image}" />
-                            <Label
-                                FontSize="16"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}"
-                                Text="{Binding Text}" />
-                            <Label
-                                FontSize="13"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                Text="{Binding Description}" />
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:GrocsViewModel}}, Path=ItemTapped}"
-                                    CommandParameter="{Binding .}"
-                                    NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Switch
-                x:Name="PageSwitch"
-                Margin="16,0"
-                IsToggled="{Binding HasCart}" />
-            <CollectionView
-                x:Name="ItemsListView2"
-                HeightRequest="100"
-                IsVisible="{Binding Source={x:Reference PageSwitch}, Path=IsToggled}"
-                ItemsLayout="HorizontalList"
-                ItemsSource="{Binding Grocs}"
-                SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:Item">
-                            <Image
-                                sharedTransitions:Transition.Name="{Binding Text}"
-                                HeightRequest="60"
-                                HorizontalOptions="Start"
-                                Source="{Binding Image}" />
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+        <StackLayout BackgroundColor="Black" Spacing="0">
+            <Frame
+                Margin="0,-40,0,0"
+                Padding="0,40,0,0"
+                BackgroundColor="#f7f4ef"
+                CornerRadius="48">
+                <Grid>
+                    <CollectionView
+                        x:Name="ItemsListView"
+                        Margin="16"
+                        ItemsSource="{Binding Grocs}"
+                        SelectionMode="None"
+                        VerticalOptions="FillAndExpand">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                                HorizontalItemSpacing="16"
+                                Orientation="Vertical"
+                                Span="2"
+                                VerticalItemSpacing="16" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    Padding="0"
+                                    CornerRadius="10"
+                                    HeightRequest="272">
+                                    <StackLayout
+                                        Padding="22"
+                                        x:DataType="model:Item"
+                                        BackgroundColor="White">
+                                        <Image
+                                            Margin="0,16"
+                                            sharedTransitions:Transition.Name="{Binding Text}"
+                                            HeightRequest="88"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding Image}" />
+                                        <Label
+                                            Margin="0,10"
+                                            FontAttributes="Bold"
+                                            FontSize="22"
+                                            Style="{DynamicResource ListItemTextStyle}"
+                                            Text="{Binding Price, StringFormat='{0:c}'}"
+                                            TextColor="#333333" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="14"
+                                            Style="{DynamicResource ListItemTextStyle}"
+                                            Text="{Binding Text}"
+                                            TextColor="#333333" />
+                                        <Label
+                                            FontSize="13"
+                                            LineBreakMode="NoWrap"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            Text="{Binding Description}"
+                                            TextColor="#CCCCCC" />
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:GrocsViewModel}}, Path=ItemTapped}"
+                                                CommandParameter="{Binding .}"
+                                                NumberOfTapsRequired="1" />
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <BoxView
+                        BackgroundColor="White"
+                        Opacity="0.5"
+                        VerticalOptions="End" />
+                    <BoxView
+                        BackgroundColor="White"
+                        Opacity="0.5"
+                        VerticalOptions="Start" />
+                </Grid>
+            </Frame>
+
+            <StackLayout Margin="16,32" Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Up" Swiped="SwipeGestureRecognizer_Swiped" />
+                </StackLayout.GestureRecognizers>
+                <Label
+                    Margin="24,0,8,0"
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="Cart"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+                <CollectionView
+                    x:Name="ItemsListView2"
+                    HeightRequest="35"
+                    ItemsSource="{Binding Grocs}"
+                    SelectionMode="None"
+                    VerticalOptions="Center">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Margin="4,0"
+                                x:DataType="model:Item"
+                                WidthRequest="28">
+                                <Frame
+                                    BackgroundColor="White"
+                                    CornerRadius="24"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                                <Image
+                                    Margin="0,6"
+                                    sharedTransitions:Transition.Name="{Binding Text}"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding Image}"
+                                    WidthRequest="26" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <StackLayout WidthRequest="160">
+                    <Frame
+                        Padding="0"
+                        BackgroundColor="#ffbb43"
+                        CornerRadius="26"
+                        HeightRequest="48"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="45">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding CartCount}"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            WidthRequest="60" />
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </RefreshView>
 </ContentPage>
