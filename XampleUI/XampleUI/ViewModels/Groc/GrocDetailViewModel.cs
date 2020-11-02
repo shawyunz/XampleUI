@@ -37,6 +37,8 @@ namespace XampleUI.ViewModels.Groc
 			set => SetProperty(ref quantity, value);
 		}
 
+		public INavigation Navigation { get; set; }
+
 		public async void LoadItemId(string itemId)
 		{
 			try
@@ -64,11 +66,19 @@ namespace XampleUI.ViewModels.Groc
 
 		private async void OnAddItem(object obj)
 		{
+			if (Quantity < 1)
+			{
+				await Application.Current.MainPage.DisplayAlert("Error", "Qty is 0.", "Ok");
+				return;
+			}
+
 			var cartItem = new ItemCart(CurrentItem)
 			{
-				Quantity = 3
+				Quantity = Quantity
 			};
 			await DataStore.AddItemToCartAsync(cartItem);
+
+			await Navigation.PopAsync();
 		}
 	}
 }

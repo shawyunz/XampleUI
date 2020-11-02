@@ -10,7 +10,9 @@ namespace XampleUI.Views.DribGrocs
 		public GrocDetail()
 		{
 			InitializeComponent();
-			BindingContext = new GrocDetailViewModel();
+			var vm = new GrocDetailViewModel();
+			vm.Navigation = Navigation;
+			BindingContext = vm;
 		}
 
 		private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
