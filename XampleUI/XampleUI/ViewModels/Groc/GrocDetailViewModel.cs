@@ -8,16 +8,12 @@ namespace XampleUI.ViewModels.Groc
 	[QueryProperty(nameof(ItemId), nameof(ItemId))]
 	internal class GrocDetailViewModel : BaseViewModel
 	{
+		private Item item;
 		private string itemId;
 		private int quantity;
-		private Item item;
 		public Command AddItemCommand => new Command(OnAddItem);
-
-		public int Quantity
-		{
-			get => quantity;
-			set => SetProperty(ref quantity, value);
-		}
+		public Command CountAddCommand => new Command(CountAdd);
+		public Command CountMinusCommand => new Command(CountMinus);
 
 		public Item CurrentItem
 		{
@@ -27,10 +23,7 @@ namespace XampleUI.ViewModels.Groc
 
 		public string ItemId
 		{
-			get
-			{
-				return itemId;
-			}
+			get => itemId;
 			set
 			{
 				itemId = value;
@@ -38,13 +31,10 @@ namespace XampleUI.ViewModels.Groc
 			}
 		}
 
-		private async void OnAddItem(object obj)
+		public int Quantity
 		{
-			var cartItem = new ItemCart(CurrentItem)
-			{
-				Quantity = 3
-			};
-			await DataStore.AddItemToCartAsync(cartItem);
+			get => quantity;
+			set => SetProperty(ref quantity, value);
 		}
 
 		public async void LoadItemId(string itemId)
@@ -57,6 +47,28 @@ namespace XampleUI.ViewModels.Groc
 			{
 				Debug.WriteLine("Failed to Load Item");
 			}
+		}
+
+		private void CountAdd()
+		{
+			Quantity += 1;
+		}
+
+		private void CountMinus()
+		{
+			if (Quantity > 0)
+			{
+				Quantity -= 1;
+			}
+		}
+
+		private async void OnAddItem(object obj)
+		{
+			var cartItem = new ItemCart(CurrentItem)
+			{
+				Quantity = 3
+			};
+			await DataStore.AddItemToCartAsync(cartItem);
 		}
 	}
 }

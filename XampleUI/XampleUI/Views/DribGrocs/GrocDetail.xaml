@@ -56,12 +56,16 @@
                             HorizontalOptions="Start"
                             Text="-"
                             TextColor="Black"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CountMinusCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
                         <Label
                             FontAttributes="Bold"
                             FontSize="18"
                             HorizontalOptions="Center"
-                            Text="2"
+                            Text="{Binding Quantity}"
                             TextColor="Black"
                             VerticalOptions="Center" />
                         <Label
@@ -70,7 +74,11 @@
                             HorizontalOptions="End"
                             Text="+"
                             TextColor="Black"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CountAddCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Grid>
                     <Label
                         FontAttributes="Bold"
