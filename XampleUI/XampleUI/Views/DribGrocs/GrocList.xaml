@@ -112,7 +112,7 @@
                     VerticalOptions="Center"
                     WidthRequest="100" />
                 <CollectionView
-                    x:Name="ItemsListView2"
+                    x:Name="CartPreviewList"
                     HeightRequest="35"
                     ItemsSource="{Binding GrocsCart}"
                     SelectionMode="None"
@@ -176,6 +176,7 @@
                     TextColor="White"
                     WidthRequest="100" />
                 <CollectionView
+                    x:Name="CartDetailList"
                     Margin="40,0,32,0"
                     HeightRequest="232"
                     ItemsSource="{Binding GrocsCart}"
@@ -205,7 +206,6 @@
                                         VerticalOptions="Center" />
                                     <Image
                                         Margin="0,6"
-                                        sharedTransitions:Transition.Name="{Binding Text}"
                                         HorizontalOptions="Center"
                                         Source="{Binding Image}"
                                         WidthRequest="26" />
