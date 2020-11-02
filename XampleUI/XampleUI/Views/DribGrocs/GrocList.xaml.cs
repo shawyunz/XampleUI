@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XampleUI.ViewModels.Groc;
 
@@ -22,9 +23,26 @@ namespace XampleUI.Views.DribGrocs
 			_viewModel.OnAppearing();
 		}
 
-		private async void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
+		private async void SwipeToShowCart(object sender, SwipedEventArgs e)
 		{
-			await DisplayAlert("Detected", "Up", "OK");
+			uint duration = 700;
+
+			await Task.WhenAll(
+				CartPreviewContainer.FadeTo(0, 500),
+				RootContainer.TranslateTo(0, -540, duration, Easing.CubicIn),
+				CartContainer.TranslateTo(0, -110, duration, Easing.CubicIn)
+			);
+		}
+
+		private async void SwipeToShowList(object sender, SwipedEventArgs e)
+		{
+			uint duration = 700;
+
+			await Task.WhenAll(
+				CartPreviewContainer.FadeTo(1, 500),
+				RootContainer.TranslateTo(0, 0, duration, Easing.CubicOut),
+				CartContainer.TranslateTo(0, 0, duration, Easing.CubicOut)
+			);
 		}
 	}
 }
