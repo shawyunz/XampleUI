@@ -14,7 +14,7 @@ Original design from [Ghulam Rasool](https://dribbble.com/shots/14018398-Cakes-M
 
 
 
-### App preview
+### Page preview
 
 ![demo](Assets/DribCakes/appdemo.gif)
 
@@ -50,9 +50,31 @@ Original design from [Cuberto](https://dribbble.com/shots/6120171-Groceries-Shop
 
 
 
+### Nuget
+
+[Xamarin.Plugin.SharedTransitions](https://www.nuget.org/packages/Xamarin.Plugin.SharedTransitions/)
 
 
-In Progress..
+
+### Page Preview:
+
+![demo](Assets/DribGroc/demo.gif)
+
+
+
+
+
+
+
+### TODO
+
+Cart amount calculation. 
+
+Uneven listview. 
+
+Status bar color.
+
+Blank image issue.
 
 
 
