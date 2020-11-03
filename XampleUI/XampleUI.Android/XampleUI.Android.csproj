@@ -165,7 +165,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_indicator.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\grocs_dlv.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\grocs_item3.jpg" />
   </ItemGroup>

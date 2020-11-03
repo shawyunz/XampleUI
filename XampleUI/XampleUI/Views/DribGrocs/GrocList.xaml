@@ -247,14 +247,14 @@
                     </StackLayout.Resources>
                     <Grid WidthRequest="62">
                         <Frame
-                            BackgroundColor="White"
+                            BackgroundColor="#181816"
                             CornerRadius="24"
                             HorizontalOptions="Center"
                             VerticalOptions="Center" />
                         <Image
-                            Margin="0,6"
+                            Margin="0,0"
                             HorizontalOptions="Center"
-                            Source="grocs_item1.png"
+                            Source="grocs_dlv.png"
                             WidthRequest="26" />
                     </Grid>
 
