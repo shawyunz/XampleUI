@@ -24,14 +24,15 @@ namespace XampleUI.Services
 				new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description.",  Image="item2.png" }
 			};
 
+			var desc = "The Lenta Lavorazione method comes directly from the traditional and artisan way of making pasta. Careful research into the best";
 			grocItems = new List<Item>()
 			{
-				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Size="Les Framboises 60g",  Image="grocs_item0.png", Price=8.99, Description="" },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Size="Les Framboises 60g", Image="grocs_item0.png", Price=8.99, Description="" },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Size="500g",  Image="grocs_item1.png", Price=7.99, Description="" },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Rummo Fusilli No 48 Pasta", Size="500g", Image="grocs_item2.png", Price=14.99, Description="" },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Biona organic White Spelt Fusilli", Size="500g",  Image="grocs_item3.png", Price=3.69, Description="The Lenta Lavorazione method comes directly from the traditional and artisan way of making pasta. Careful research into the best" },
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Size="500g",  Image="grocs_item1.png", Price=7.99, Description="" }
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie .", Size="Les Framboises 60g",  Image="grocs_item00.png", Price=8.99, Description=desc },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "La Vie", Size="Les Framboises 60g", Image="grocs_item0.png", Price=8.99, Description=desc },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle", Size="500g",  Image="grocs_item1.png", Price=7.99, Description=desc },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Rummo Fusilli No 48 Pasta", Size="500g", Image="grocs_item2.png", Price=14.99, Description=desc },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Biona organic White Spelt Fusilli", Size="500g",  Image="grocs_item3.png", Price=3.69, Description=desc },
+				new Item { Id = Guid.NewGuid().ToString(), Text = "Seggiano Organic Tagliatelle .", Size="500g",  Image="grocs_item4.png", Price=7.99, Description=desc }
 			};
 
 			grocCartItems = new List<ItemCart>();
