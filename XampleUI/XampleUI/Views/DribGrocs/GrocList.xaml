@@ -149,7 +149,7 @@
                         HeightRequest="48"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        WidthRequest="45">
+                        WidthRequest="48">
                         <Label
                             FontAttributes="Bold"
                             FontSize="16"
