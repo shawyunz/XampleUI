@@ -289,7 +289,7 @@
                         CharacterSpacing="1"
                         FontAttributes="Bold"
                         FontSize="32"
-                        Text="$59.97"
+                        Text="{Binding CartAmount, StringFormat='{0:c}'}"
                         TextColor="White" />
                 </StackLayout>
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -13,13 +14,6 @@ namespace XampleUI.ViewModels.Groc
 	public class GrocsViewModel : BaseViewModel
 	{
 		private Item _selectedItem;
-		public bool HasCart { get; set; }
-
-		public ObservableCollection<Item> Grocs { get; }
-		public ObservableCollection<ItemCart> GrocsCart { get; set; }
-		public int CartCount => GrocsCart?.Count ?? 0;
-		public Command LoadItemsCommand { get; }
-		public Command<Item> ItemTapped { get; }
 
 		public GrocsViewModel()
 		{
@@ -29,6 +23,47 @@ namespace XampleUI.ViewModels.Groc
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
 			ItemTapped = new Command<Item>(OnItemSelected);
+		}
+
+		public double CartAmount { get; private set; }
+		public int CartCount => GrocsCart?.Count ?? 0;
+		public ObservableCollection<Item> Grocs { get; }
+		public ObservableCollection<ItemCart> GrocsCart { get; set; }
+		public bool HasCart { get; set; }
+		public Command<Item> ItemTapped { get; }
+		public Command LoadItemsCommand { get; }
+
+		public Item SelectedItem
+		{
+			get => _selectedItem;
+			set
+			{
+				SetProperty(ref _selectedItem, value);
+				OnItemSelected(value);
+			}
+		}
+
+		public async void OnAppearing()
+		{
+			IsBusy = true;
+			SelectedItem = null;
+
+			GrocsCart.Clear();
+			var items = await DataStore.GetGrocsCartAsync();
+			if (items is null)
+			{
+				return;
+			}
+			foreach (var item in items)
+			{
+				GrocsCart.Add(item);
+			}
+
+			OnPropertyChanged(nameof(CartCount));
+
+			var amount = GrocsCart?.Sum(x => x.Price * x.Quantity) ?? 0;
+			CartAmount = amount < 40 ? amount + 30 : amount;
+			OnPropertyChanged(nameof(CartAmount));
 		}
 
 		private async Task ExecuteLoadItemsCommand()
@@ -51,35 +86,6 @@ namespace XampleUI.ViewModels.Groc
 			finally
 			{
 				IsBusy = false;
-			}
-		}
-
-		public async void OnAppearing()
-		{
-			IsBusy = true;
-			SelectedItem = null;
-
-			GrocsCart.Clear();
-			var items = await DataStore.GetGrocsCartAsync();
-			if (items is null)
-			{
-				return;
-			}
-			foreach (var item in items)
-			{
-				GrocsCart.Add(item);
-			}
-
-			OnPropertyChanged(nameof(CartCount));
-		}
-
-		public Item SelectedItem
-		{
-			get => _selectedItem;
-			set
-			{
-				SetProperty(ref _selectedItem, value);
-				OnItemSelected(value);
 			}
 		}
 
