@@ -6,16 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assest\Gilroy-ExtraBold.otf" />
-    <None Remove="Assest\Gilroy-Light.otf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Assest\Gilroy-ExtraBold.otf" />
-    <EmbeddedResource Include="Assest\Gilroy-Light.otf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />  
     <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
