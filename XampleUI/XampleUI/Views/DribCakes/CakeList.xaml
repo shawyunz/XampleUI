@@ -8,11 +8,11 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ExBoldLabel" TargetType="Label">
-                <Setter Property="FontFamily" Value="GilroyEB" />
+                <!--<Setter Property="FontFamily" Value="GilroyEB" />-->
                 <Setter Property="TextColor" Value="Black" />
             </Style>
             <Style x:Key="LightLabel" TargetType="Label">
-                <Setter Property="FontFamily" Value="GilroyL" />
+                <!--<Setter Property="FontFamily" Value="GilroyL" />-->
                 <Setter Property="TextColor" Value="DarkGray" />
             </Style>
         </ResourceDictionary>
