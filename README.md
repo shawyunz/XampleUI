@@ -56,30 +56,23 @@ Original design from [Cuberto](https://dribbble.com/shots/6120171-Groceries-Shop
 
 
 
-### Page Preview:
+### Page Preview
 
-![demo](Assets/DribGroc/demo.gif)
-
-
+![demo](Assets/DribGroc/demo2.gif)
 
 
 
+### Tasks
 
-
-### TODO
-
-Cart amount calculation. 
-
-Uneven listview. 
-
-Status bar color.
-
-Blank image issue.
-
+- [ ] item transition to detail
+- [x] item transition to cart
+- [x] real cart
+- [x] scroll animation
+- [x] Uneven list view
 
 
 
 
 ## More coming
 
-More coming.
+Loading...
