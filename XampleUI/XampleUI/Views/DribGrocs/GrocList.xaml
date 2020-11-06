@@ -21,14 +21,14 @@
             Spacing="0">
             <Frame
                 Margin="0,-40,0,0"
-                Padding="0,40,0,0"
+                Padding="0,40,0,24"
                 BackgroundColor="#f7f4ef"
                 CornerRadius="48">
-                <Grid>
-                    <CollectionView
+                <ScrollView HeightRequest="580">
+                    <Grid Margin="8,0" ColumnDefinitions="*,*">
+                        <!--<CollectionView
                         x:Name="ItemsListView"
                         Margin="16"
-                        HeightRequest="580"
                         ItemsSource="{Binding Grocs}"
                         SelectionMode="None"
                         VerticalOptions="FillAndExpand">
@@ -84,16 +84,21 @@
                                 </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <BoxView
-                        BackgroundColor="White"
-                        Opacity="0.5"
-                        VerticalOptions="End" />
-                    <BoxView
-                        BackgroundColor="White"
-                        Opacity="0.5"
-                        VerticalOptions="Start" />
-                </Grid>
+                    </CollectionView>-->
+                        <StackLayout x:Name="LeftLane" Grid.Column="0" />
+                        <StackLayout x:Name="RightLane" Grid.Column="1" />
+                        <BoxView
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="White"
+                            Opacity="0.5"
+                            VerticalOptions="End" />
+                        <BoxView
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="White"
+                            Opacity="0.5"
+                            VerticalOptions="Start" />
+                    </Grid>
+                </ScrollView>
             </Frame>
 
             <StackLayout
