@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XampleUI.Views.DribComp.CompAir"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ScrollView>
+        <Grid HeightRequest="1000">
+            <StackLayout BackgroundColor="Red" Spacing="0">
+                <StackLayout
+                    HeightRequest="160"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                    <Label
+                        Margin="0,0,0,48"
+                        FontSize="28"
+                        Text="Comp"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <Label
+                        Margin="0,0,0,48"
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        Text="Air"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout BackgroundColor="Black" HeightRequest="52">
+                    <Label
+                        Padding="16,0"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="Start"
+                        Text="FEATURE"
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="Label">
+                                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                                <Setter Property="HorizontalOptions" Value="Start" />
+                                <Setter Property="Padding" Value="16,0" />
+                                <Setter Property="FontSize" Value="17" />
+                            </Style>
+                            <Style TargetType="StackLayout">
+                                <Setter Property="HeightRequest" Value="76" />
+                                <Setter Property="BackgroundColor" Value="#ffb39b" />
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <StackLayout>
+                        <Label Text="Seat pitch" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#ffd2c4">
+                        <Label Text="Seat width" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Wi-Fi" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#ffd2c4">
+                        <Label Text="Entertainment" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="In-seat Power" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#ffd2c4">
+                        <Label Text="Seat Selection" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Loyalty Tiers" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#ffd2c4">
+                        <Label Text="Checked Bag" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Points Expiration" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Frame
+                Margin="0,108,124,0"
+                Padding="18"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HorizontalOptions="End"
+                Opacity="0.95"
+                WidthRequest="82" />
+            <Frame
+                Margin="0,108,0,0"
+                Padding="18"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HorizontalOptions="End"
+                Opacity="0.95"
+                WidthRequest="82">
+                <BoxView />
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

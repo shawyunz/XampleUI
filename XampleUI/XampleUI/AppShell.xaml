@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cakes="clr-namespace:XampleUI.Views.DribCakes"
+    xmlns:compa="clr-namespace:XampleUI.Views.DribComp"
     xmlns:grocs="clr-namespace:XampleUI.Views.DribGrocs"
     xmlns:local="clr-namespace:XampleUI.Views.XFShell"
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
@@ -107,6 +108,10 @@
             Title="Groc"
             ContentTemplate="{DataTemplate grocs:GrocList}"
             Icon="icon_cart.png" />
+        <ShellContent
+            Title="CompAir"
+            ContentTemplate="{DataTemplate compa:CompAir}"
+            Icon="icon_star.png" />
     </FlyoutItem>
 
     <!--  When the Flyout is visible this will be a menu item you can tie a click behavior to  -->

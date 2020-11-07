@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using XampleUI.Views.XFShell;
 using XampleUI.Views.DribCakes;
 using XampleUI.Views.DribGrocs;
+using XampleUI.Views.DribComp;
 
 namespace XampleUI
 {
@@ -23,6 +24,9 @@ namespace XampleUI
 
 			Routing.RegisterRoute(nameof(GrocList), typeof(GrocList));
 			Routing.RegisterRoute(nameof(GrocDetail), typeof(GrocDetail));
+
+
+			Routing.RegisterRoute(nameof(CompAir), typeof(CompAir));
 		}
 
 		private async void OnMenuItemClicked(object sender, EventArgs e)
