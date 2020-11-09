@@ -157,15 +157,15 @@
                                         VerticalOptions="Center"
                                         WidthRequest="84" />
                                 </Grid>
-                                <Label Text="33" />
-                                <Label Text="17" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Label Text="2" />
-                                <Image Source="icon_dollar.png" />
-                                <Label Text="18 months" />
+                                <Label Text="{Binding SeatPitch}" />
+                                <Label Text="{Binding SeatWidth}" />
+                                <Image Source="{Binding Wifi}" />
+                                <Image Source="{Binding Entertainment}" />
+                                <Image Source="{Binding InSeatPower}" />
+                                <Image Source="{Binding SeatSelection}" />
+                                <Label Text="{Binding LoyaltyTiers}" />
+                                <Image Source="{Binding CheckedBags}" />
+                                <Label Text="{Binding PointsExpiration}" />
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -246,15 +246,15 @@
                                         VerticalOptions="Center"
                                         WidthRequest="84" />
                                 </Grid>
-                                <Label Text="33" />
-                                <Label Text="17" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Image Source="icon_check.png" />
-                                <Label Text="2" />
-                                <Image Source="icon_dollar.png" />
-                                <Label Text="18 months" />
+                                <Label Text="{Binding SeatPitch}" />
+                                <Label Text="{Binding SeatWidth}" />
+                                <Image Source="{Binding Wifi}" />
+                                <Image Source="{Binding Entertainment}" />
+                                <Image Source="{Binding InSeatPower}" />
+                                <Image Source="{Binding SeatSelection}" />
+                                <Label Text="{Binding LoyaltyTiers}" />
+                                <Image Source="{Binding CheckedBags}" />
+                                <Label Text="{Binding PointsExpiration}" />
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

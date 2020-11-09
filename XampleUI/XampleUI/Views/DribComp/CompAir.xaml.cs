@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -16,46 +17,115 @@ namespace XampleUI.Views.DribComp
 
 			PinAirlineCmd = new Command<ItemAir>(PinAirline);
 
-			IniteCompList();
+			ItemsComparison = new ObservableCollection<ItemAir>(MockData());
+			ItemsAll = new ObservableCollection<ItemAir>(MockData());
 			ItemsCompaPin = new ObservableCollection<ItemAir>();
-			ItemsCompaAll = new ObservableCollection<ItemAir>()
-			{
-				new ItemAir { Id = "0", Text = "Southwest", SeatPitch="", Image="itemair1.png" },
-				new ItemAir { Id = "1", Text = "VgAmerica", Image="itemair2.png", SeatPitch="" },
-				new ItemAir { Id = "2", Text = "JetBlue",  Image="itemair3.png", SeatPitch="" },
-				new ItemAir { Id = "3", Text = "HAWAIIAN", Image="itemair4.png", SeatPitch="" },
-				new ItemAir { Id = "4", Text = "DELTA",  Image="itemair5.png", SeatPitch="" }
-			};
 
 			BindingContext = this;
+
+			//PIN JetBlue to start
+			PinAirline(new ItemAir
+			{
+				Id = "2",
+				Text = "JetBlue",
+				Image = "itemair3.png",
+				SeatPitch = "33",
+				SeatWidth = "18",
+				Wifi = "icon_check.png",
+				Entertainment = "icon_check.png",
+				InSeatPower = "icon_check.png",
+				SeatSelection = "icon_check.png",
+				LoyaltyTiers = "1",
+				CheckedBags = "icon_dollar.png",
+				PointsExpiration = "Never"
+			});
 		}
 
 		public ItemAir CurrentLeftItem { get; set; }
 		public ItemAir CurrentRightItem { get; set; }
 		public bool IsNotOriginalPostion => !IsOriginalPostion;
 		public bool IsOriginalPostion { get; set; } = true;
-		public ObservableCollection<ItemAir> ItemsCompa { get; private set; }
-		public ObservableCollection<ItemAir> ItemsCompaAll { get; private set; }
+		public ObservableCollection<ItemAir> ItemsAll { get; private set; }
 		public ObservableCollection<ItemAir> ItemsCompaPin { get; private set; }
+		public ObservableCollection<ItemAir> ItemsComparison { get; private set; }
 		public Command<ItemAir> PinAirlineCmd { get; }
 
-		private void IniteCompList()
+		private void ChangeState()
 		{
-			//Or, init value from ItemsCompaAll, todo
-			ItemsCompa = new ObservableCollection<ItemAir>()
-			{
-				new ItemAir { Id = "0", Text = "Southwest", SeatPitch="", Image="itemair1.png" },
-				new ItemAir { Id = "1", Text = "VgAmerica", Image="itemair2.png", SeatPitch="" },
-				new ItemAir { Id = "2", Text = "JetBlue",  Image="itemair3.png", SeatPitch="" },
-				new ItemAir { Id = "3", Text = "HAWAIIAN", Image="itemair4.png", SeatPitch="" },
-				new ItemAir { Id = "4", Text = "DELTA",  Image="itemair5.png", SeatPitch="" }
-			};
+			IsOriginalPostion = !IsOriginalPostion;
+			OnPropertyChanged(nameof(IsOriginalPostion));
+			OnPropertyChanged(nameof(IsNotOriginalPostion));
 		}
+
+		private List<ItemAir> MockData() => new List<ItemAir>()
+		{
+			new ItemAir {
+				Id = "0",
+				Text = "Southwest",
+				Image="itemair1.png",
+				SeatPitch="32",
+				SeatWidth="17",
+				Wifi="icon_dollar.png",
+				Entertainment="",
+				InSeatPower="",
+				SeatSelection="",
+				LoyaltyTiers="2",
+				CheckedBags="icon_check.png",
+				PointsExpiration="24-month" },
+			new ItemAir { Id = "1",
+				Text = "VgAmerica",
+				Image="itemair2.png",
+				SeatPitch="33",
+				SeatWidth="17",
+				Wifi="icon_check.png",
+				Entertainment="icon_check.png",
+				InSeatPower="icon_check.png",
+				SeatSelection="icon_check.png",
+				LoyaltyTiers="2",
+				CheckedBags="icon_dollar.png",
+				PointsExpiration="18-month" },
+			new ItemAir { Id = "2",
+				Text = "JetBlue",
+				Image="itemair3.png",
+				SeatPitch="33",
+				SeatWidth="18",
+				Wifi="icon_check.png",
+				Entertainment="icon_check.png",
+				InSeatPower="icon_check.png",
+				SeatSelection="icon_check.png",
+				LoyaltyTiers="1",
+				CheckedBags="icon_dollar.png",
+				PointsExpiration="Never" },
+			new ItemAir { Id = "3",
+				Text = "HAWAIIAN",
+				Image="itemair4.png",
+				SeatPitch="30",
+				SeatWidth="18",
+				Wifi="",
+				Entertainment="",
+				InSeatPower="",
+				SeatSelection="icon_check.png",
+				LoyaltyTiers="2",
+				CheckedBags="icon_dollar.png",
+				PointsExpiration="18-month" },
+			new ItemAir { Id = "4",
+				Text = "DELTA",
+				Image="itemair5.png",
+				SeatPitch="32",
+				SeatWidth="17",
+				Wifi="icon_dollar.png",
+				Entertainment="",
+				InSeatPower="icon_check.png",
+				SeatSelection="icon_dollar.png",
+				LoyaltyTiers="2",
+				CheckedBags="icon_dollar.png",
+				PointsExpiration="Never" },
+		};
 
 		private async void PinAirline(ItemAir obj)
 		{
-			IniteCompList();
-			ItemsCompa.Remove(ItemsCompa.Where(i => i.Id == obj.Id).Single());
+			ItemsComparison = new ObservableCollection<ItemAir>(MockData());
+			ItemsComparison.Remove(ItemsComparison.Where(i => i.Id == obj.Id).Single());
 			ItemsCompaPin.Clear();
 			ItemsCompaPin.Add(obj);
 
@@ -63,28 +133,26 @@ namespace XampleUI.Views.DribComp
 
 			if (IsOriginalPostion)
 			{
-				LeftList.ItemsSource = ItemsCompa;
+				LeftList.ItemsSource = ItemsComparison;
 				RightList.ItemsSource = ItemsCompaPin;
+				ChangeState();
 
 				await Task.WhenAll(
-					LeftFrame.TranslateTo(124, 0, duration, Easing.CubicOut),
-					RightFrame.TranslateTo(-124, 0, duration, Easing.CubicOut)
+					LeftFrame.TranslateTo(124, 0, duration, Easing.CubicIn),
+					RightFrame.TranslateTo(-124, 0, duration, Easing.CubicIn)
 				);
 			}
 			else
 			{
-				RightList.ItemsSource = ItemsCompa;
+				RightList.ItemsSource = ItemsComparison;
 				LeftList.ItemsSource = ItemsCompaPin;
+				ChangeState();
 
 				await Task.WhenAll(
-					LeftFrame.TranslateTo(0, 0, duration, Easing.CubicOut),
-					RightFrame.TranslateTo(0, 0, duration, Easing.CubicOut)
+				LeftFrame.TranslateTo(0, 0, duration, Easing.CubicIn),
+					RightFrame.TranslateTo(0, 0, duration, Easing.CubicIn)
 				);
 			}
-
-			IsOriginalPostion = !IsOriginalPostion;
-			OnPropertyChanged(nameof(IsOriginalPostion));
-			OnPropertyChanged(nameof(IsNotOriginalPostion));
 		}
 	}
 }
