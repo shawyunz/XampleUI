@@ -1,6 +1,6 @@
 # XampleUI
 
-//A Xamarin.Forms solution to replicate interesting UI design.
+// A Xamarin.Forms solution to replicate interesting UI design.
 
 var XampleUI = "Xamarin sample UI";
 
@@ -36,12 +36,14 @@ https://youtu.be/Lq7-2PzsSpY
 
 ### :memo: ​Notes
 
-- As I cut the icons and images on my own, so the value of margin or padding in the same row or column might not be consistent.
-- The list page items have different size, no idea about how to implement it into an infinite list (tried to make an uneven list before though).
-- According to the license, the font files are not uploaded on Git (related code cleaned from latest repo).
-- Cropping and editing images really took a lot of time. 
+- Margin or padding in the same row or column might not be consistent (as a rookie image cutter).
+- Different item size makes it difficult to turn into an infinite list.
 - Pin a screenshot ([Snipast](https://www.snipaste.com/)) made UI QA easier.
+- Cropping and editing images are time-consuming. 
 - Rendering a video requires a better CPU.
+- Font in "this" page is different from the gif above (By the font license, font files are not pushed).
+
+
 
 
 
