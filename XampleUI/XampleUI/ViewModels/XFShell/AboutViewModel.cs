@@ -10,8 +10,8 @@ namespace XampleUI.ViewModels.XFShell
 	{
 		public AboutViewModel()
 		{
-			Title = "About";
-			OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
+			Title = "Welcome";
+			OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://github.com/shawyunz"));
 			NavigateClickCommand = new Command(OnNavClick);
 		}
 

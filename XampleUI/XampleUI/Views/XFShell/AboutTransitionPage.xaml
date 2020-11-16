@@ -13,7 +13,7 @@
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
+                Text="Welcome to Xample.UI!"
                 VerticalOptions="CenterAndExpand" />
             <Button Clicked="Button_Clicked" Text="Back" />
             <Image
