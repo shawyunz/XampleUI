@@ -99,6 +99,38 @@ Issues out of the video:
 
 
 
+## 04 Bank Cards
+
+
+| App Preview                                                 | Original design ([Dimest](https://dribbble.com/shots/9323126/attachments/1425260?mode=media)) |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| <img src="Assets/DribBank/demo.gif" alt="demo" width="400"> | <img src="Assets/DribBank/original.gif" alt="original" width="600"> |
+
+
+
+### :memo:Tasks
+
+#### 1. Assets:
+
+  - [x] Card Images
+  - [x] Icons
+  - [x] Colors
+
+
+
+
+#### 2. Animation:
+
+  - [ ] Number update animation.
+  - [ ] Card swipe away.
+  - [ ] Transition to the detail page.
+  - [ ] Flip animation. (demo done in XampleControl)
+
+
+
+
+
+
 ## More coming
 
 :construction: Loading...
