@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XampleUI.Views.DribBank.CardList"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    Padding="24"
+    BackgroundColor="#141414"
+    NavigationPage.HasNavigationBar="False"
+    Shell.TabBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="White" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Image HorizontalOptions="Start" Source="bank_back.png" />
+            <StackLayout Margin="0,48" Orientation="Horizontal">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Bank Cards" />
+
+                <Image HorizontalOptions="Start" Source="bank_user.png" />
+            </StackLayout>
+            <Label
+                FontSize="12"
+                HorizontalOptions="Start"
+                Text="Balance" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Start"
+                Text="$7787.00" />
+            <CarouselView IndicatorView="indicatorView" ItemsSource="{Binding BankCardList}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image
+                                Rotation="90"
+                                Source="{Binding CardImageA}"
+                                WidthRequest="200" />
+                            <!--<Label
+                                    FontSize="30"
+                                    HorizontalOptions="Start"
+                                    Text="Balance" />-->
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                x:Name="indicatorView"
+                HorizontalOptions="StartAndExpand"
+                IndicatorColor="White"
+                SelectedIndicatorColor="DarkGray" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

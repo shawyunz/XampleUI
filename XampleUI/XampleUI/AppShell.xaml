@@ -3,6 +3,7 @@
     x:Class="XampleUI.AppShell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:bankc="clr-namespace:XampleUI.Views.DribBank"
     xmlns:cakes="clr-namespace:XampleUI.Views.DribCakes"
     xmlns:compa="clr-namespace:XampleUI.Views.DribComp"
     xmlns:grocs="clr-namespace:XampleUI.Views.DribGrocs"
@@ -111,6 +112,10 @@
         <ShellContent
             Title="CompAir"
             ContentTemplate="{DataTemplate compa:CompAir}"
+            Icon="icon_star.png" />
+        <ShellContent
+            Title="BankCard"
+            ContentTemplate="{DataTemplate bankc:CardList}"
             Icon="icon_star.png" />
     </FlyoutItem>
 

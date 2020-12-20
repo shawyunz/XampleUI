@@ -6,12 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />  
     <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\DribBank\CardList.xaml.cs">
+      <DependentUpon>CardList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DribBank\CardTransaction.xaml.cs">
+      <DependentUpon>CardTransaction.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DribCakes\CakeDetail.xaml.cs">
       <DependentUpon>CakeDetail.xaml</DependentUpon>
     </Compile>
@@ -19,6 +25,12 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AboutTransitionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DribBank\CardList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DribBank\CardTransaction.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DribCakes\CakeDetail.xaml">

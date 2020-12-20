@@ -1,9 +1,10 @@
 ﻿using Plugin.SharedTransitions;
 using Xamarin.Forms;
-using XampleUI.Views.XFShell;
+using XampleUI.Views.DribBank;
 using XampleUI.Views.DribCakes;
-using XampleUI.Views.DribGrocs;
 using XampleUI.Views.DribComp;
+using XampleUI.Views.DribGrocs;
+using XampleUI.Views.XFShell;
 
 namespace XampleUI
 {
@@ -24,8 +25,9 @@ namespace XampleUI
 			Routing.RegisterRoute(nameof(GrocList), typeof(GrocList));
 			Routing.RegisterRoute(nameof(GrocDetail), typeof(GrocDetail));
 
-
 			Routing.RegisterRoute(nameof(CompAir), typeof(CompAir));
+
+			Routing.RegisterRoute(nameof(CardList), typeof(CardList));
 		}
 	}
 }
