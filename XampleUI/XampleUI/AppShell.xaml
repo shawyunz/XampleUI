@@ -126,10 +126,10 @@
         If you would like to navigate to this content you can do so by calling
         await Shell.Current.GoToAsync("//LoginPage");
     -->
-    <ShellContent
+    <!--<ShellContent
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage"
-        Shell.FlyoutBehavior="Disabled" />
+        Shell.FlyoutBehavior="Disabled" />-->
 
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
