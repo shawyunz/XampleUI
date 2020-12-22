@@ -3,10 +3,9 @@
     x:Class="XampleUI.Views.DribBank.CardList"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     Padding="24"
     BackgroundColor="#141414"
-    NavigationPage.HasNavigationBar="False"
+    Shell.NavBarIsVisible="False"
     Shell.TabBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout>
@@ -36,10 +35,16 @@
                 FontSize="24"
                 HorizontalOptions="Start"
                 Text="$7787.00" />
-            <CarouselView IndicatorView="indicatorView" ItemsSource="{Binding BankCardList}">
+            <CarouselView
+                x:Name="CardListView"
+                IndicatorView="indicatorView"
+                ItemsSource="{Binding BankCardList}">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={CardListView}, Path=BindingContext.ItemTapped}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
                             <Image
                                 Rotation="90"
                                 Source="{Binding CardImageA}"

@@ -1,12 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XampleUI.Views.DribBank.CardTransaction">
+<ContentPage
+    x:Class="XampleUI.Views.DribBank.CardTransaction"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="24"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="White" />
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Image
+                Grid.Row="0"
+                HorizontalOptions="Start"
+                Source="bank_back.png" />
+
+            <Label
+                Grid.Row="1"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Full card" />
+
+            <Label
+                Grid.Row="2"
+                FontAttributes="Bold"
+                FontSize="14"
+                HorizontalOptions="Center"
+                Text="Rotate the card to view the security code" />
+            <StackLayout
+                Grid.Row="3"
+                Padding="0,48"
+                BackgroundColor="#EEEEEE"
+                HeightRequest="200">
+                <StackLayout.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                </StackLayout.GestureRecognizers>
+                <StackLayout.Resources>
+                    <Style TargetType="Frame">
+                        <Setter Property="Padding" Value="0" />
+                        <Setter Property="BorderColor" Value="Gray" />
+                        <Setter Property="CornerRadius" Value="12" />
+                        <Setter Property="HasShadow" Value="False" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                        <Setter Property="WidthRequest" Value="240" />
+                    </Style>
+                </StackLayout.Resources>
+                <Frame x:Name="Card1View" IsVisible="{Binding IsFront, Mode=TwoWay}">
+                    <Image Aspect="AspectFit" Source="card1.png" />
+                </Frame>
+                <Frame x:Name="Card2View" IsVisible="{Binding IsBack, Mode=TwoWay}">
+                    <Image Aspect="AspectFit" Source="card2.png" />
+                </Frame>
+            </StackLayout>
+
+
+            <Frame CornerRadius="10">
+                <Frame.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Up" Swiped="SwipeGestureRecognizer_Swiped" />
+                    <SwipeGestureRecognizer Direction="Down" Swiped="SwipeGestureRecognizer_Swiped" />
+                </Frame.GestureRecognizers>
+                <StackLayout BindableLayout.ItemsSource="{Binding User.TopFollowers}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Ellipse />
+                                <StackLayout>
+                                    <Label />
+                                    <Label />
+                                </StackLayout>
+                                <Label />
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </Frame>
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

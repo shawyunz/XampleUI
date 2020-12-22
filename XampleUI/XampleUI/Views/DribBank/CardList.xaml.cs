@@ -15,6 +15,18 @@ namespace XampleUI.Views.DribBank
 			BindingContext = this;
 		}
 
+
+		public Command<BankCard> ItemTapped => new Command<BankCard>(OnItemSelected);
+
+		private async void OnItemSelected(BankCard item)
+		{
+			if (item == null)
+				return;
+
+			// This will push the ItemDetailPage onto the navigation stack
+			await Shell.Current.GoToAsync($"{nameof(CardTransaction)}?{nameof(CardTransaction.ItemId)}={item.CardCode}");
+		}
+
 		public ObservableCollection<BankCard> BankCardList => new ObservableCollection<BankCard>(MockCards());
 
 		public List<BankCard> MockCards() => new List<BankCard>()
@@ -37,27 +49,6 @@ namespace XampleUI.Views.DribBank
 				CardNumber="24-month",
 				CardImageA="bankcard3a",
 				CardImageB="bankcard3b"}
-		};
-
-		public List<BankTransaction> MockTransactions() => new List<BankTransaction>()
-		{
-			new BankTransaction {
-				Title="2",
-				Type="bank",
-				Amount="+123.00" },
-			new BankTransaction {
-				Title="2",
-				Type="bank",
-				Amount="+123.00" },
-			new BankTransaction {
-				Title="2",
-				Type="bank",
-				Amount="+123.00" },
-			new BankTransaction {
-				Title="2",
-				Type="bank",
-				Amount="+123.00" }
-			//.....
 		};
 
 	}
