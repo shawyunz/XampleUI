@@ -28,7 +28,9 @@ namespace XampleUI.Views.DribBank
 
 		public ObservableCollection<BankTransaction> BankTransList => new ObservableCollection<BankTransaction>(MockTransactions());
 
-		public bool IsFront { get; set; }
+		public bool IsFront { get; set; } = true;
+
+		public bool LabelVisibility { get; set; } = true;
 
 		public string ItemId
 		{
@@ -141,7 +143,15 @@ namespace XampleUI.Views.DribBank
 
 		private void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
 		{
-
+			if (e.Direction == SwipeDirection.Up)
+			{
+				LabelVisibility = false;
+			}
+			else
+			{
+				LabelVisibility = true;
+			}
+			OnPropertyChanged("LabelVisibility");
 		}
 	}
 }

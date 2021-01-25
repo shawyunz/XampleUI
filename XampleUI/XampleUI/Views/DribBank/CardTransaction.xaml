@@ -3,11 +3,14 @@
     x:Class="XampleUI.Views.DribBank.CardTransaction"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Padding="24"
+    BackgroundColor="#141414"
     Shell.NavBarIsVisible="False"
     Shell.TabBarIsVisible="False">
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+        <Grid
+            Padding="24"
+            RowDefinitions="Auto, Auto, Auto, Auto, *"
+            VerticalOptions="FillAndExpand">
             <Grid.Resources>
                 <ResourceDictionary>
                     <Style TargetType="Label">
@@ -16,16 +19,24 @@
                 </ResourceDictionary>
             </Grid.Resources>
 
-            <Image
-                Grid.Row="0"
-                HorizontalOptions="Start"
-                Source="bank_back.png" />
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Image
+                    HorizontalOptions="StartAndExpand"
+                    Source="bank_back.png"
+                    WidthRequest="30" />
+                <Image
+                    HorizontalOptions="End"
+                    Source="bank_share.png"
+                    WidthRequest="30" />
+            </StackLayout>
 
             <Label
                 Grid.Row="1"
+                Margin="0,24"
                 FontAttributes="Bold"
                 FontSize="20"
                 HorizontalOptions="Center"
+                IsVisible="{Binding LabelVisibility, Mode=TwoWay}"
                 Text="Full card" />
 
             <Label
@@ -33,11 +44,13 @@
                 FontAttributes="Bold"
                 FontSize="14"
                 HorizontalOptions="Center"
+                IsVisible="{Binding LabelVisibility, Mode=TwoWay}"
                 Text="Rotate the card to view the security code" />
+
             <StackLayout
                 Grid.Row="3"
                 Padding="0,48"
-                BackgroundColor="#EEEEEE"
+                BackgroundColor="Transparent"
                 HeightRequest="200">
                 <StackLayout.GestureRecognizers>
                     <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
@@ -55,13 +68,17 @@
                 <Frame x:Name="Card1View" IsVisible="{Binding IsFront, Mode=TwoWay}">
                     <Image Aspect="AspectFit" Source="bankcard1a.png" />
                 </Frame>
-                <Frame x:Name="Card2View" IsVisible="{Binding IsBack, Mode=TwoWay}">
+                <Frame x:Name="Card2View" IsVisible="false">
                     <Image Aspect="AspectFit" Source="bankcard1b.png" />
                 </Frame>
             </StackLayout>
 
 
-            <Frame CornerRadius="10">
+            <Frame
+                Grid.Row="4"
+                Margin="-24,-36"
+                BackgroundColor="Black"
+                CornerRadius="24">
                 <Frame.GestureRecognizers>
                     <SwipeGestureRecognizer Direction="Up" Swiped="SwipeGestureRecognizer_Swiped" />
                     <SwipeGestureRecognizer Direction="Down" Swiped="SwipeGestureRecognizer_Swiped" />
