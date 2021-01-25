@@ -43,7 +43,7 @@
                     <DataTemplate>
                         <Grid>
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={CardListView}, Path=BindingContext.ItemTapped}" CommandParameter="{Binding .}" />
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference CardListView}, Path=BindingContext.ItemTapped}" CommandParameter="{Binding .}" />
                             </Grid.GestureRecognizers>
                             <Image
                                 Rotation="90"

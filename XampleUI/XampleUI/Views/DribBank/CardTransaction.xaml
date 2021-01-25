@@ -53,10 +53,10 @@
                     </Style>
                 </StackLayout.Resources>
                 <Frame x:Name="Card1View" IsVisible="{Binding IsFront, Mode=TwoWay}">
-                    <Image Aspect="AspectFit" Source="card1.png" />
+                    <Image Aspect="AspectFit" Source="bankcard1a.png" />
                 </Frame>
                 <Frame x:Name="Card2View" IsVisible="{Binding IsBack, Mode=TwoWay}">
-                    <Image Aspect="AspectFit" Source="card2.png" />
+                    <Image Aspect="AspectFit" Source="bankcard1b.png" />
                 </Frame>
             </StackLayout>
 
@@ -81,9 +81,6 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </Frame>
-
-
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

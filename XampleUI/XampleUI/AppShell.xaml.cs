@@ -28,6 +28,7 @@ namespace XampleUI
 			Routing.RegisterRoute(nameof(CompAir), typeof(CompAir));
 
 			Routing.RegisterRoute(nameof(CardList), typeof(CardList));
+			Routing.RegisterRoute(nameof(CardTransaction), typeof(CardTransaction));
 		}
 	}
 }
