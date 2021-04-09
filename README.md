@@ -124,7 +124,7 @@ Issues out of the video:
   - [ ] Number update animation.
   - [ ] Card swipe away.
   - [ ] Transition to the detail page.
-  - [ ] Flip animation. (demo done in XampleControl)
+  - [x] Flip animation. (demo done in XampleControl)
 
 
 
